@@ -1,0 +1,8 @@
+{
+  "name": "digital-queue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:/v-sokolov/digital-queue.git",
+  "author": "Vitalii Sokolov <vitalii.sokolov@life-moments.co.uk>",
+  "license": "MIT"
+}
