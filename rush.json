@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.70.0",
+  "pnpmVersion": "6.7.1",
+  "pnpmOptions": {
+    "pnpmStore": "local",
+    "preventManualShrinkwrapChanges": true,
+    "strictPeerDependencies": true,
+    "resolutionStrategy": "fewer-dependencies",
+    "useWorkspaces": true
+  },
+  "nodeSupportedVersionRange": ">=14.0.0",
+  "suppressNodeLtsWarning": false,
+  "ensureConsistentVersions": true,
+  "projectFolderMinDepth": 1,
+  "projectFolderMaxDepth": 2,
+  "allowMostlyStandardPackageNames": false,
+  "gitPolicy": {
+    "versionBumpCommitMessage": "chore: 🤖 updating packages",
+    "changeLogUpdateCommitMessage": "chore: 🤖 updating changelogs"
+  },
+  "repository": {
+    "url": "git@github.com:/v-sokolov/digital-queue.git",
+    "defaultBranch": "develop",
+    "defaultRemote": "origin"
+  },
+  "eventHooks": {
+    "preRushInstall": [],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": []
+  },
+  "telemetryEnabled": false,
+  "hotfixChangeEnabled": false,
+  "projects": [
+    {
+      "packageName": "@digital-queue/contracts",
+      "projectFolder": "./contracts",
+      "versionPolicyName": "version-1",
+      "tags": ["contracts"]
+    }
+  ]
+}

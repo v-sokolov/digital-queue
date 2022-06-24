@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@digital-queue/contracts",
+      "comment": "init version 2",
+      "type": "major"
+    }
+  ],
+  "packageName": "@digital-queue/contracts"
+}

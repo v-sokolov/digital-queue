@@ -1,0 +1,21 @@
+{
+  "name": "@digital-queue/contracts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "types": "index.ts",
+  "repository": "git@github.com:/v-sokolov/digital-queue.git",
+  "author": "Vitalii Sokolov <vetalsokolov4@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "compile": "tsc --pretty",
+    "watch": "tsc -w"
+  },
+  "engines": {
+    "node": ">=16.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+}
