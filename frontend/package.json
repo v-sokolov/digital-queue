@@ -1,5 +1,6 @@
 {
   "name": "@digital-queue/frontend",
+  "version": "0.0.1",
   "packageManager": "yarn@3.2.1",
   "scripts": {
     "start": "vite",
@@ -14,25 +15,21 @@
   "devDependencies": {
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@vitejs/plugin-react": "^1.3.2",
-    "eslint": "^8.18.0",
+    "eslint": "^7.0.0",
     "eslint-config-standard-with-typescript": "^21.0.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-promise": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.0",
+    "@vitejs/plugin-react": "^1.3.2",
     "typescript": "4.4.4",
     "vite": "^2.9.12",
-    "vite-plugin-checker": "^0.4.6"
+    "vite-plugin-checker": "^0.4.6",
+    "@digital-queue/contracts": "workspace:*"
   },
   "ts-standard": {
     "project": "./tsconfig.json"
-  },
-  "engines": {
-    "yarn": "3.2.1",
-    "npm": "please-use-yarn",
-    "pnpm": "please-use-yarn",
-    "node": "^16"
   }
 }

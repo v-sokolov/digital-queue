@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@digital-queue/frontend",
+      "comment": "minor fix fe rush",
+      "type": "major"
+    }
+  ],
+  "packageName": "@digital-queue/frontend"
+}

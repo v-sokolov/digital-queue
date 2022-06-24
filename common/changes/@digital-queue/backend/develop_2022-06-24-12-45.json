@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@digital-queue/backend",
+      "comment": " v2",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@digital-queue/backend"
+}
