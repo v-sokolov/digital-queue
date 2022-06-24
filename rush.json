@@ -34,10 +34,10 @@
   "hotfixChangeEnabled": false,
   "projects": [
     {
-      "packageName": "@digital-queue/contracts",
-      "projectFolder": "./contracts",
+      "packageName": "@digital-queue/shared",
+      "projectFolder": "./shared",
       "versionPolicyName": "version-1",
-      "tags": ["contracts"]
+      "tags": ["shared"]
     },
     {
       "packageName": "@digital-queue/backend",

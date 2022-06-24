@@ -1,5 +1,5 @@
 {
-  "name": "@digital-queue/contracts",
+  "name": "@digital-queue/shared",
   "version": "1.0.0",
   "main": "index.js",
   "types": "index.ts",

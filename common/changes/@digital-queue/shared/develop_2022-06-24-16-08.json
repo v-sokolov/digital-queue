@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@digital-queue/shared",
+      "comment": "renaming",
+      "type": "major"
+    }
+  ],
+  "packageName": "@digital-queue/shared"
+}

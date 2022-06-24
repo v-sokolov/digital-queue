@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@digital-queue/backend",
+      "comment": "auth draft",
+      "type": "major"
+    }
+  ],
+  "packageName": "@digital-queue/backend"
+}

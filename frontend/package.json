@@ -27,7 +27,7 @@
     "typescript": "4.4.4",
     "vite": "^2.9.12",
     "vite-plugin-checker": "^0.4.6",
-    "@digital-queue/contracts": "workspace:*"
+    "@digital-queue/shared": "workspace:*"
   },
   "ts-standard": {
     "project": "./tsconfig.json"
