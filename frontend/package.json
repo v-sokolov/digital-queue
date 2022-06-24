@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "@digital-queue/frontend",
   "packageManager": "yarn@3.2.1",
   "scripts": {
     "start": "vite",

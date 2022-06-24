@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@digital-queue/backend",
+      "comment": "adding fe ",
+      "type": "major"
+    }
+  ],
+  "packageName": "@digital-queue/backend"
+}

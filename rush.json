@@ -38,6 +38,18 @@
       "projectFolder": "./contracts",
       "versionPolicyName": "version-1",
       "tags": ["contracts"]
+    },
+    {
+      "packageName": "@digital-queue/backend",
+      "projectFolder": "./backend",
+      "versionPolicyName": "version-1",
+      "tags": ["backend"]
+    },
+    {
+      "packageName": "@digital-queue/frontend",
+      "projectFolder": "./frontend",
+      "versionPolicyName": "version-1",
+      "tags": ["frontend"]
     }
   ]
 }
