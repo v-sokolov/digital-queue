@@ -1,19 +1,35 @@
+## Prerequisites:
+
+1) Install rush globally
+```shell
+$ npm install -g @microsoft/rush
+```
+
+## Add new dependency
+```shell
+$ rush add -p [package-name] [--dev]
+```
+
 ## Run single project
-- rushX [internal script]
+```shell
+$ rushx [internal script]
+```
 
 ## Run packages synchronization between projects
-- rush update
-## Run packages synchronization between projects
-- --full
-- --purge
+```shell
+$ rush update [--full] [--purge]
+```
 
 ## Save new changelog updates
-- rush change
-## Review changelog
-- --verify
+```shell
+$ rush change [--verify]
+```
 
 ## Prettier
-`prettier . --write` or `rush-prettier` across all projects
+```shell
+$ prettier . --write
 
-## Rush
-`npm install -g @microsoft/rush`
+or
+
+$ rush-prettier
+```

@@ -31,5 +31,8 @@
   },
   "ts-standard": {
     "project": "./tsconfig.json"
+  },
+  "engines": {
+    "node": ">=16.0"
   }
 }

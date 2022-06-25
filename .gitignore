@@ -85,7 +85,5 @@ cdktf.log
 .pnpm-debug.log
 .sst
 .build
-/backend/dist/*
-/frontend/dist/*
 
-backend/dist/
+*/dist

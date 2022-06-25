@@ -9,7 +9,7 @@
     "resolutionStrategy": "fewer-dependencies",
     "useWorkspaces": true
   },
-  "nodeSupportedVersionRange": ">=14.0.0",
+  "nodeSupportedVersionRange": ">=16.0.0",
   "suppressNodeLtsWarning": false,
   "ensureConsistentVersions": true,
   "projectFolderMinDepth": 1,

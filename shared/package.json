@@ -1,21 +1,30 @@
 {
   "name": "@digital-queue/shared",
   "version": "1.0.0",
-  "main": "index.js",
-  "types": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "git@github.com:/v-sokolov/digital-queue.git",
   "author": "Vitalii Sokolov <vetalsokolov4@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "compile": "tsc --pretty",
-    "watch": "tsc -w"
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "lint": "eslint --ext .tsx,.ts src/",
+    "format": "yarn lint --fix"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.0",
+    "typescript": "4.4.4",
+    "esbuild": "~0.14.47"
   },
   "engines": {
     "node": ">=16.0"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "4.4.4"
   }
 }
