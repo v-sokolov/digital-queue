@@ -27,9 +27,5 @@ $ rush change [--verify]
 
 ## Prettier
 ```shell
-$ prettier . --write
-
-or
-
-$ rush-prettier
+$ rush prettier
 ```
