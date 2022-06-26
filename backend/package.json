@@ -43,7 +43,8 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "swagger-ui-express": "^4.4.0"
+    "swagger-ui-express": "^4.4.0",
+    "@nestjs/config": "~2.1.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
@@ -71,6 +72,8 @@
     "tsconfig-paths": "4.0.0",
     "typescript": "4.4.4",
     "webpack": "^5.0.0",
+    "@mikro-orm/cli": "~5.2.1",
+    "@mikro-orm/migrations": "~5.2.1",
     "@digital-queue/shared": "workspace:*"
   },
   "jest": {
@@ -92,5 +95,11 @@
   },
   "engines": {
     "node": ">=16.0"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./dist/mikro-orm.config.js"
+    ]
   }
 }

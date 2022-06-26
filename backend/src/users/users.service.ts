@@ -1,43 +1,43 @@
 import { ConflictException, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@mikro-orm/nestjs';
+import { UserModel } from '../entities/user.entity';
+import { EntityRepository } from '@mikro-orm/postgresql';
+import { CryptoService } from '../crypto/crypto.service';
 
 export interface User {
   userId: number;
   email: string;
   password: string;
+  firstName: string;
+  lastName: string;
 }
 
 @Injectable()
 export class UsersService {
-  private readonly users: User[] = [
-    {
-      userId: 1,
-      email: 'john',
-      password: 'changeMe'
-    },
-    {
-      userId: 2,
-      email: 'maria',
-      password: 'guess'
-    }
-  ];
-
-  private userId: number = 2;
+  constructor(
+    @InjectRepository(UserModel) private readonly userRepository: EntityRepository<UserModel>,
+    private readonly cryptoService: CryptoService
+  ) {}
 
   async findAll(): Promise<User[]> {
-    return this.users;
+    return await this.userRepository.findAll();
   }
 
-  async findOne(email: string): Promise<User | undefined> {
-    return this.users.find((user) => user.email === email);
+  async findOne(where: Record<string, string>): Promise<User | null> {
+    return await this.userRepository.findOne(where);
   }
 
-  async create(data: Omit<User, 'userId'>): Promise<User> {
-    if (await this.findOne(data.email)) {
+  async create(data: any): Promise<User> {
+    if (await this.findOne({ email: data.email })) {
       throw new ConflictException('User with this email already exists!');
     }
 
-    this.userId = this.userId++;
-    this.users.push({ ...data, userId: this.userId });
-    return this.findOne(data.email);
+    const encodedPassword = this.cryptoService.encode(data.password);
+
+    const createResult = await this.userRepository.create({ ...data, password: encodedPassword });
+
+    await this.userRepository.persistAndFlush(createResult);
+
+    return createResult;
   }
 }
