@@ -2,6 +2,10 @@ import { Injectable } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
 import { CryptoService } from '../crypto/crypto.service';
+import { RegisterUserInterface } from './interfaces/register-user.interface';
+import { UserModel } from '../entities/user.entity';
+import { GenerateTokenPayloadInterface } from './interfaces/generate-token-payload.interface';
+import { ValidateUserPayload } from './interfaces/validate-user-payload';
 
 @Injectable()
 export class AuthService {
@@ -11,30 +15,21 @@ export class AuthService {
     private readonly crypto: CryptoService
   ) {}
 
-  async validateUser(email: string, password: string): Promise<any> {
-    const user = await this.usersService.findOne({ email, password: this.crypto.encode(password) });
-
-    if (!user) {
-      return null;
-    }
-
-    return user;
+  public async validateUser({ email, password }: ValidateUserPayload): Promise<UserModel | null> {
+    return await this.usersService.findOne({ email, password: this.crypto.encode(password) });
   }
 
-  // TODO: add DTO
-  generateToken(payload: any) {
-    return {
-      accessToken: this.jwtService.sign(payload)
-    };
+  private generateToken(payload: GenerateTokenPayloadInterface) {
+    return this.jwtService.sign(payload);
   }
 
-  async register(user: any) {
-    await this.usersService.create(user);
+  public async register(user: RegisterUserInterface): Promise<string> {
+    const createdUser = await this.usersService.create(user);
 
-    return this.generateToken({ username: user.email, sub: user.userId });
+    return this.generateToken({ email: user.email, userId: createdUser.userId });
   }
 
-  async login(user: any) {
-    return this.generateToken({ username: user.email, sub: user.userId });
+  public async login(user: UserModel): Promise<string> {
+    return this.generateToken({ email: user.email, userId: user.userId });
   }
 }

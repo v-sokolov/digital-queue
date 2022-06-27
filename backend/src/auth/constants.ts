@@ -1,3 +1,1 @@
-export const jwtConstants = {
-  secret: 'fire resist'
-};
+export const JWT_SECRET = 'fire_resist';

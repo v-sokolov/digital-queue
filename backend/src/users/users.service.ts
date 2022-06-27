@@ -4,14 +4,6 @@ import { UserModel } from '../entities/user.entity';
 import { EntityRepository } from '@mikro-orm/postgresql';
 import { CryptoService } from '../crypto/crypto.service';
 
-export interface User {
-  userId: number;
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-}
-
 @Injectable()
 export class UsersService {
   constructor(
@@ -19,15 +11,15 @@ export class UsersService {
     private readonly cryptoService: CryptoService
   ) {}
 
-  async findAll(): Promise<User[]> {
+  async findAll(): Promise<UserModel[]> {
     return await this.userRepository.findAll();
   }
 
-  async findOne(where: Record<string, string>): Promise<User | null> {
+  async findOne(where: Record<string, string>): Promise<UserModel | null> {
     return await this.userRepository.findOne(where);
   }
 
-  async create(data: any): Promise<User> {
+  async create(data: any): Promise<UserModel> {
     if (await this.findOne({ email: data.email })) {
       throw new ConflictException('User with this email already exists!');
     }

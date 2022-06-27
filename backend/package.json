@@ -44,7 +44,9 @@
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "swagger-ui-express": "^4.4.0",
-    "@nestjs/config": "~2.1.0"
+    "@nestjs/config": "~2.1.0",
+    "class-validator": "~0.13.2",
+    "class-transformer": "~0.5.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

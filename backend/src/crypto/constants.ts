@@ -1,1 +1,1 @@
-export const SECRET = 'armor penetration';
+export const CRYPTO_SECRET = 'armor penetration';
