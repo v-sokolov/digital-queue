@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { SignUpFormInput } from '../interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signUpFormSchema } from '../validation';
+import { signUp } from '@application/services/authorization.service';
 
 export const SignUpPage: React.FC = () => {
   const { control, handleSubmit } = useForm<SignUpFormInput>({
@@ -18,8 +19,8 @@ export const SignUpPage: React.FC = () => {
     resolver: yupResolver(signUpFormSchema)
   });
 
-  const onSubmit: SubmitHandler<SignUpFormInput> = (data) => {
-    // TODO: implement logic
+  const onSubmit: SubmitHandler<SignUpFormInput> = async (data) => {
+    await signUp(data);
   };
 
   return (

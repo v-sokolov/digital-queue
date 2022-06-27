@@ -18,6 +18,8 @@ async function bootstrap() {
     RequestContext.create(orm.em, next);
   });
 
+  app.enableCors();
+
   const config = new DocumentBuilder()
     .setTitle('Queue example')
     .setDescription('The queue API description')

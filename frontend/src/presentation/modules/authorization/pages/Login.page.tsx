@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { TextController, PasswordController } from '../components';
 import { loginFormSchema } from '../validation';
 import { LoginFormInput } from '../interfaces';
+import { login } from '@application/services/authorization.service';
 
 export const LoginPage: React.FC = () => {
   const { control, handleSubmit } = useForm<LoginFormInput>({
@@ -15,8 +16,8 @@ export const LoginPage: React.FC = () => {
     resolver: yupResolver(loginFormSchema)
   });
 
-  const onSubmit: SubmitHandler<LoginFormInput> = (data) => {
-    // TODO: implement logic
+  const onSubmit: SubmitHandler<LoginFormInput> = async (data) => {
+    await login(data);
   };
 
   return (

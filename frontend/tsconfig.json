@@ -16,7 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "composite": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+      "@application/*": ["./application/*"],
+      "@infrastructure/*": ["./infrastructure/*"]
+    }
   },
   "include": ["src"]
 }
